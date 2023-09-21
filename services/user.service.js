@@ -3,6 +3,7 @@ import Cryptr from 'cryptr'
 import { utilService } from './util.service.js'
 const cryptr = new Cryptr('secret-puk-1234')
 
+const cryptr = Cryptr(process.env
 const users = utilService.readJsonFile('data/user.json')
 
 

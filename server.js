@@ -30,9 +30,9 @@ app.use(express.static("public"))
 // **************** Toys API ****************:
 // List
 app.get("/api/toy", (req, res) => {
-    const filterBy = req.query
-    if (filterBy.maxPrice) filterBy.maxPrice = +filterBy.maxPrice
-    if (filterBy.inStock) filterBy.inStock = JSON.parse(filterBy.inStock)
+  const filterBy = req.query
+  if (filterBy.maxPrice) filterBy.maxPrice = +filterBy.maxPrice
+  if (filterBy.inStock) filterBy.inStock = JSON.parse(filterBy.inStock)
   toyService
     .query(filterBy)
     .then((toys) => {
@@ -46,26 +46,25 @@ app.get("/api/toy", (req, res) => {
 
 // Add
 app.post("/api/toy", (req, res) => {
-    //   const loggedinUser = userService.validateToken(req.cookies.loginToken)
-    //   if (!loggedinUser) return res.status(401).send("Cannot add car")
-    const { name, price, labels, inStock } = req.body
-    const toy = {
-        name,
-        price: +price,
-        labels,
-        inStock,
-    }
-    toyService
-        .save(toy)
-        .then((savedToy) => {
-            res.send(savedToy)
-        })
-        .catch((err) => {
-            loggerService.error("Cannot add car", err)
-            res.status(400).send("Cannot add car")
-        })
+  //   const loggedinUser = userService.validateToken(req.cookies.loginToken)
+  //   if (!loggedinUser) return res.status(401).send("Cannot add car")
+  const { name, price, labels, inStock } = req.body
+  const toy = {
+    name,
+    price: +price,
+    labels,
+    inStock,
+  }
+  toyService
+    .save(toy)
+    .then((savedToy) => {
+      res.send(savedToy)
+    })
+    .catch((err) => {
+      loggerService.error("Cannot add car", err)
+      res.status(400).send("Cannot add car")
+    })
 })
-
 
 // Edit
 app.put("/api/toy", (req, res) => {
@@ -188,7 +187,7 @@ app.get("/**", (req, res) => {
 })
 
 // Listen will always be the last line in our server!
-const port = 3030
+const port = process.env.PORT || 3030
 app.listen(port, () => {
   loggerService.info(`Server listening on port http://127.0.0.1:${port}/`)
 })
