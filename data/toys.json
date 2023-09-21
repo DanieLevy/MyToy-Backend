@@ -1,0 +1,110 @@
+[
+  {
+    "name": "Talking Doll",
+    "price": 94,
+    "labels": [
+      "Doll",
+      "Battery Powered",
+      "Baby"
+    ],
+    "inStock": true,
+    "_id": "bDESP",
+    "createdAt": 1695230640137
+  },
+  {
+    "name": "It I . ",
+    "price": 66,
+    "labels": [
+      "Doll",
+      "Battery Powered",
+      "Baby"
+    ],
+    "inStock": true,
+    "_id": "w2xjV",
+    "createdAt": 1695230741250
+  },
+  {
+    "name": "this happened was and ",
+    "price": 61,
+    "labels": [
+      "Doll",
+      "Battery Powered",
+      "Baby"
+    ],
+    "inStock": true,
+    "_id": "AZA1I",
+    "createdAt": 1695230812245
+  },
+  {
+    "name": "Talking Doll",
+    "price": 49,
+    "labels": [
+      "Doll",
+      "Battery Powered",
+      "Baby"
+    ],
+    "inStock": true,
+    "_id": "TUuMZ",
+    "createdAt": 1695230644147
+  },
+  {
+    "name": "the port this happened tuned ",
+    "price": 49,
+    "labels": [
+      "Doll",
+      "Battery Powered",
+      "Baby"
+    ],
+    "inStock": true,
+    "_id": "yCzz2",
+    "createdAt": 1695230745603
+  },
+  {
+    "name": "the color of television and was ",
+    "price": 29,
+    "labels": [
+      "Doll",
+      "Battery Powered",
+      "Baby"
+    ],
+    "inStock": true,
+    "_id": "phU77",
+    "createdAt": 1695230703772
+  },
+  {
+    "name": "Talking Doll",
+    "price": 19,
+    "labels": [
+      "Doll",
+      "Battery Powered",
+      "Baby"
+    ],
+    "inStock": true,
+    "_id": "bJWhE",
+    "createdAt": 1695230642582
+  },
+  {
+    "name": ". . from various people ",
+    "price": 15,
+    "labels": [
+      "Doll",
+      "Battery Powered",
+      "Baby"
+    ],
+    "inStock": false,
+    "_id": "lTo3D",
+    "createdAt": 1695230814500
+  },
+  {
+    "name": "above above and ",
+    "price": 66,
+    "labels": [
+      "Doll",
+      "Battery Powered",
+      "Baby"
+    ],
+    "inStock": true,
+    "_id": "zELEG",
+    "createdAt": 1695235391697
+  }
+]
