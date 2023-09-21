@@ -5,6 +5,7 @@ const cryptr = new Cryptr('secret-puk-1234')
 
 const users = utilService.readJsonFile('data/user.json')
 
+
 export const userService = {
     query,
     getById,
