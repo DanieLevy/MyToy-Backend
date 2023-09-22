@@ -3,6 +3,8 @@ import { utilService } from "./util.service.js"
 
 const toys = utilService.readJsonFile("data/toys.json")
 
+const PAGE_SIZE = 6
+
 export const toyService = {
   query,
   get,
@@ -11,8 +13,6 @@ export const toyService = {
 }
 
 function query(filterBy = {}) {
-  console.log("filterBy", filterBy)
-  // support filterBy.sortDir: asc/desc
   var toysToDisplay = toys
 
   if (filterBy.txt) {
@@ -40,6 +40,7 @@ function query(filterBy = {}) {
         )
       })
     })
+    if (!toysToDisplay.length) return Promise.reject("No toys found")
   }
 
   if (filterBy.sortBy === "name") {
@@ -58,7 +59,17 @@ function query(filterBy = {}) {
       : toysToDisplay.sort((a, b) => b.createdAt - a.createdAt)
   }
 
-  return Promise.resolve(toysToDisplay)
+  const toysBeforeSlice = toysToDisplay.length
+
+  if (filterBy.pageIdx) {
+    const startIdx = (filterBy.pageIdx - 1) * PAGE_SIZE
+    toysToDisplay = toysToDisplay.slice(startIdx, startIdx + PAGE_SIZE)
+  }
+
+  return Promise.resolve({
+    toys: toysToDisplay,
+    toysBeforeSlice,
+  })
 }
 
 function get(toyId) {

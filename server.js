@@ -7,6 +7,7 @@ import cookieParser from "cookie-parser"
 import { toyService } from "./services/toy.service.js"
 import { userService } from "./services/user.service.js"
 import { loggerService } from "./services/logger.service.js"
+import { log } from "console"
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const app = express()
@@ -33,11 +34,13 @@ app.get("/api/toy", (req, res) => {
   const filterBy = req.query
   if (filterBy.maxPrice) filterBy.maxPrice = +filterBy.maxPrice
   if (filterBy.inStock) filterBy.inStock = JSON.parse(filterBy.inStock)
+  if (filterBy.pageIdx) filterBy.pageIdx = +filterBy.pageIdx
   toyService
     .query(filterBy)
     .then((toys) => {
       res.send(toys)
-    })
+    }
+    )
     .catch((err) => {
       loggerService.error("Cannot get toys", err)
       res.status(400).send("Cannot get toys")
