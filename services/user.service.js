@@ -28,6 +28,7 @@ function validateToken(token) {
 }
 
 function checkLogin({ username, password }) {
+  username = username.toLowerCase()
   let user = users.find((user) => user.username === username)
   // check password
   if (user && user.password === password) {
@@ -37,10 +38,10 @@ function checkLogin({ username, password }) {
       score: user.score,
     }
     return Promise.resolve(user)
-  } else
-    if (user && user.password !== password) return Promise.reject("Wrong password")
-    else if (!user) return Promise.reject("Cannot find user")
-    else return Promise.reject("Cannot login")
+  } else if (user && user.password !== password)
+    return Promise.reject("Wrong password")
+  else if (!user) return Promise.reject("Cannot find user")
+  else return Promise.reject("Cannot login")
 }
 
 function query() {
@@ -66,6 +67,7 @@ function save(user) {
     userToUpdate.score = user.score
   } else {
     // make sure the user is not in the system
+    user.username = user.username.toLowerCase()
     const validUser = users.find((_user) => user.username === _user.username)
     if (validUser) return Promise.reject("Username taken")
     userToUpdate._id = _makeId()
