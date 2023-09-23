@@ -148,7 +148,7 @@ app.post("/api/auth/login", (req, res) => {
     })
     .catch((err) => {
       loggerService.error("Cannot login", err)
-      res.status(401).send("Not you!")
+      res.status(401).send(err)
     })
 })
 
@@ -163,7 +163,7 @@ app.post("/api/auth/signup", (req, res) => {
     })
     .catch((err) => {
       loggerService.error("Cannot signup", err)
-      res.status(401).send("Nope!")
+      res.status(401).send(err)
     })
 })
 
@@ -183,6 +183,11 @@ app.put("/api/user", (req, res) => {
     res.cookie("loginToken", token)
     res.send(user)
   })
+
+  .catch((err) => {
+    loggerService.error("Cannot update user", err)
+    res.status(400).send("Cannot update user")
+  })  
 })
 
 app.get("/**", (req, res) => {

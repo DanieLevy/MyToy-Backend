@@ -26,5 +26,40 @@
         "fullname": "Mcbobo",
         "score": 10000,
         "_id": "cVPQr"
+    },
+    {
+        "username": "daniel",
+        "password": "123456",
+        "fullname": "danielshabat",
+        "score": 10000,
+        "_id": "skKY6"
+    },
+    {
+        "username": "daniel111",
+        "password": "123456",
+        "fullname": "danielshabat",
+        "score": 10000,
+        "_id": "UXk33"
+    },
+    {
+        "username": "muki",
+        "password": "muki",
+        "fullname": "mukis",
+        "score": 10000,
+        "_id": "txBo5"
+    },
+    {
+        "username": "mukikkk",
+        "password": "muki",
+        "fullname": "kkk",
+        "score": 10000,
+        "_id": "5yfTO"
+    },
+    {
+        "username": "admin",
+        "password": "admin",
+        "fullname": "admin",
+        "score": 10000,
+        "_id": "QIEms"
     }
 ]
