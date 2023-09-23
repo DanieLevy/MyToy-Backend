@@ -573,3 +573,4 @@
 23.9.2023, 16:08:28 - ERROR - Cannot login | Cannot find user
 23.9.2023, 16:08:31 - ERROR - Cannot login | Wrong password
 23.9.2023, 16:11:59 - ERROR - Cannot login | Cannot find user
+23.9.2023, 16:16:27 - INFO - Server listening on port http://127.0.0.1:3030/
