@@ -59,7 +59,7 @@ function query(filterBy = {}) {
       : toysToDisplay.sort((a, b) => b.createdAt - a.createdAt)
   }
 
-  const toysBeforeSlice = toysToDisplay.length
+  const toysBeforeSlice = toysToDisplay
 
   if (filterBy.pageIdx) {
     const startIdx = (filterBy.pageIdx - 1) * PAGE_SIZE

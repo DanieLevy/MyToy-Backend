@@ -1,1 +1,9 @@
-[]
+[
+    {
+        "username": "admin",
+        "password": "admin",
+        "fullname": "admin",
+        "score": 10000,
+        "_id": "DXSgX"
+    }
+]
