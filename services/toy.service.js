@@ -3,7 +3,7 @@ import { utilService } from "./util.service.js"
 
 const toys = utilService.readJsonFile("data/toys.json")
 
-const PAGE_SIZE = 6
+const PAGE_SIZE = 8
 
 export const toyService = {
   query,
@@ -99,6 +99,7 @@ function save(toy, loggedinUser) {
   } else {
     toy._id = _makeId()
     toy.createdAt = Date.now()
+    toy.desc = utilService.makeLorem(50)
     // toy.owner = loggedinUser
     toys.push(toy)
   }
