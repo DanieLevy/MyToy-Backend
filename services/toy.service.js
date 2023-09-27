@@ -1,4 +1,5 @@
 import fs from "fs"
+
 import { utilService } from "./util.service.js"
 
 const toys = utilService.readJsonFile("data/toys.json")
@@ -100,6 +101,8 @@ function save(toy, loggedinUser) {
     toy._id = _makeId()
     toy.createdAt = Date.now()
     toy.desc = utilService.makeLorem(50)
+    toy.imgUrl = utilService.generateRobotImage(toy._id)
+
     // toy.owner = loggedinUser
     toys.push(toy)
   }
